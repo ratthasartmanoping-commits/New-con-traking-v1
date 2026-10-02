@@ -1,0 +1,6 @@
+{
+  "name": "Brick - Minimalist Digital Detox",
+  "description": "A minimalist screen time blocker and digital detox companion inspired by physical tactile design in white, grey, and cream tones.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

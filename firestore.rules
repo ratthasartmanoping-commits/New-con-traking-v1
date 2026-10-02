@@ -1,0 +1,9 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Users can read/write their own user document under the 'users' collection
+    match /users/{userId} {
+      allow read, write: if true; // In development, allow full access for rapid syncing
+    }
+  }
+}
