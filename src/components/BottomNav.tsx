@@ -166,8 +166,11 @@ export const BottomNav: React.FC<BottomNavProps> = ({
   ];
 
   return (
-    <nav className="w-full select-none bg-transparent border-none pointer-events-none p-0 m-0 pb-0 translate-y-[5%]">
-      <div className="w-full max-w-md mx-auto h-[44px] px-6 sm:px-8 flex items-end justify-between pointer-events-auto pb-0.5">
+    <nav
+      className="w-full select-none bg-transparent border-none pointer-events-none p-0 m-0"
+      style={{ paddingBottom: 'max(0.75rem, env(safe-area-inset-bottom, 14px))' }}
+    >
+      <div className="w-full max-w-md mx-auto h-[50px] px-7 sm:px-8 flex items-center justify-between pointer-events-auto">
         {tabs.map((tab) => {
           const isActive = activeTab === tab.id;
           return (
