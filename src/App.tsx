@@ -459,8 +459,11 @@ export default function App() {
                   opacity: selectedEvent ? 0 : 1,
                 }}
                 transition={{ type: 'spring', damping: 28, stiffness: 320 }}
-                className="absolute top-0 left-0 right-0 z-30 px-6 sm:px-7 flex items-center justify-between pointer-events-none"
-                style={{ paddingTop: 'calc(env(safe-area-inset-top, 0px) + 16px)' }}
+                className="absolute left-0 right-0 z-30 px-6 sm:px-7 flex items-center justify-between pointer-events-none"
+                style={{
+                  top: '2%',
+                  paddingTop: 'calc(env(safe-area-inset-top, 0px) + 16px)',
+                }}
               >
             {/* Left Segmented Pill Switcher or Back Button */}
             {isDailyExpanded && activeTab === 'activity' && activitySubTab === 'daily' ? (
@@ -748,7 +751,7 @@ export default function App() {
 
           {/* Schedule Tab */}
           {activeTab === 'schedule' && (
-            <div className="flex-1 flex flex-col overflow-y-auto pb-[calc(env(safe-area-inset-bottom,0px)+72px)] bg-[#FAF9F6]" style={{ paddingTop: 'calc(env(safe-area-inset-top, 0px) + 76px)' }}>
+            <div className="flex-1 flex flex-col overflow-y-auto pb-[calc(env(safe-area-inset-bottom,0px)+72px)] bg-[#FAF9F6]" style={{ paddingTop: 'calc(env(safe-area-inset-top, 0px) + 76px + 2dvh)' }}>
               <ScheduleTab
                 schedules={schedules}
                 modes={modes}
@@ -761,7 +764,7 @@ export default function App() {
 
           {/* Activity Tab */}
           {activeTab === 'activity' && (
-            <div className="flex-1 flex flex-col overflow-y-auto pb-[calc(env(safe-area-inset-bottom,0px)+72px)] bg-[#FAF9F6]" style={{ paddingTop: 'calc(env(safe-area-inset-top, 0px) + 76px)' }}>
+            <div className="flex-1 flex flex-col overflow-y-auto pb-[calc(env(safe-area-inset-bottom,0px)+72px)] bg-[#FAF9F6]" style={{ paddingTop: 'calc(env(safe-area-inset-top, 0px) + 76px + 2dvh)' }}>
               <ActivityTab
                 activityData={activityData}
                 onOpenDayDetails={() => {}}
@@ -774,7 +777,7 @@ export default function App() {
 
           {/* Settings Tab */}
           {activeTab === 'settings' && (
-            <div className="flex-1 flex flex-col overflow-y-auto pb-[calc(env(safe-area-inset-bottom,0px)+72px)] bg-[#FAF9F6]" style={{ paddingTop: 'calc(env(safe-area-inset-top, 0px) + 76px)' }}>
+            <div className="flex-1 flex flex-col overflow-y-auto pb-[calc(env(safe-area-inset-bottom,0px)+72px)] bg-[#FAF9F6]" style={{ paddingTop: 'calc(env(safe-area-inset-top, 0px) + 76px + 2dvh)' }}>
               <SettingsTab
                 settings={settings}
                 onUpdateSettings={setSettings}
