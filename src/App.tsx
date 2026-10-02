@@ -823,15 +823,15 @@ export default function App() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 onClick={() => setIsLoginSlideUp(false)}
-                className="absolute inset-0 bg-black/60 backdrop-blur-xs z-30 pointer-events-auto"
+                className="fixed inset-0 bg-black/60 backdrop-blur-xs z-50 pointer-events-auto"
               />
-              {/* Sheet Card */}
+              {/* Sheet Card - Flush to the bottom edge of the app */}
               <motion.div
                 initial={{ y: '100%' }}
                 animate={{ y: 0 }}
                 exit={{ y: '100%' }}
                 transition={{ type: 'spring', damping: 28, stiffness: 280 }}
-                className="absolute bottom-0 left-0 right-0 z-40 bg-[#FAF9F5] rounded-t-[36px] shadow-2xl p-6 pb-[max(2rem,env(safe-area-inset-bottom,24px))] flex flex-col items-center space-y-3 pointer-events-auto"
+                className="fixed bottom-0 left-0 right-0 z-50 w-full bg-[#FAF9F5] rounded-t-[32px] sm:rounded-t-[36px] rounded-b-none shadow-[0_-8px_30px_rgba(0,0,0,0.25)] p-6 pb-[max(1.5rem,calc(env(safe-area-inset-bottom,0px)+1rem))] flex flex-col items-center space-y-3 pointer-events-auto m-0"
               >
                 <div className="w-10 h-1 bg-[#D8D4CA] rounded-full mb-1" />
                 <h3 className="text-base font-medium text-[#1E1D1B] tracking-wide">Sign in to Brick</h3>
@@ -842,7 +842,7 @@ export default function App() {
                     if (settings.soundEnabled) sounds.playClick();
                     setIsEmailModalOpen(true);
                   }}
-                  className="w-full py-3.5 px-5 rounded-full bg-[#386447] hover:bg-[#2C523A] active:scale-98 text-white font-medium text-xs sm:text-sm tracking-wide shadow-lg flex items-center justify-center gap-2.5 transition-all cursor-pointer border border-emerald-400/30 group"
+                  className="w-full max-w-sm py-3.5 px-5 rounded-full bg-[#386447] hover:bg-[#2C523A] active:scale-98 text-white font-medium text-xs sm:text-sm tracking-wide shadow-lg flex items-center justify-center gap-2.5 transition-all cursor-pointer border border-emerald-400/30 group"
                 >
                   <Mail className="w-4 h-4 text-emerald-200 group-hover:scale-110 transition-transform" />
                   <span>Sign in with Email</span>
@@ -851,7 +851,7 @@ export default function App() {
                 {/* Google Login Button */}
                 <button
                   onClick={handleGoogleLogin}
-                  className="w-full py-3.5 px-5 rounded-full bg-[#1E1D1B] hover:bg-black active:scale-98 text-white font-medium text-xs sm:text-sm tracking-wide shadow-xl flex items-center justify-center gap-2.5 transition-all cursor-pointer group border border-white/20"
+                  className="w-full max-w-sm py-3.5 px-5 rounded-full bg-[#1E1D1B] hover:bg-black active:scale-98 text-white font-medium text-xs sm:text-sm tracking-wide shadow-xl flex items-center justify-center gap-2.5 transition-all cursor-pointer group border border-white/20"
                 >
                   <svg className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" viewBox="0 0 24 24">
                     <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
